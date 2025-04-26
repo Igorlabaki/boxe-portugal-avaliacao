@@ -157,7 +157,7 @@ export default function AvaliacaoForm() {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Avaliação do Boxe em Portugal</h1>
+        <h1 className="text-sm md:text-2xl font-bold">Avaliação do  Site da Associacao Portuguesa de Boxe</h1>
         <ThemeToggle />
       </div>
       
