@@ -15,19 +15,19 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="bg-white shadow">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex justify-between items-center">
-          <div className="text-2xl font-bold text-gray-900">Federação Portuguesa de Boxe</div>
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex justify-between items-center w-full">
+          <div className="text-center md:text-left w-full text-2xl font-bold text-gray-900">Federação Portuguesa de Boxe</div>
         </div>
       </header>
       
       <main className="flex-grow bg-gray-200">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-8">
-              Avalie o Boxe em Portugal
+            <h1 className="md:text-4xl text-[25px] font-bold tracking-tight text-gray-900 sm:text-5xl mb-8">
+              Avalie a sua experiência no nosso site
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto mb-12">
-              Ajude-nos a melhorar a experiência do boxe em Portugal. Faça login para compartilhar sua avaliação e sugestões.
+              Ajude-nos a melhorar o boxe em Portugal. Faça login para compartilhar sua avaliação e sugestões.
             </p>
             <div className="mt-10 w-full flex justify-center  items-center ">
               <LoginButton />

@@ -32,29 +32,10 @@ export const mockSubmitAvaliacao = async (data: AvaliacaoFormData) => {
 };
 
 // Função para obter estatísticas das avaliações
-export const getAvaliacoesStats = async (): Promise<AvaliacaoStats[]> => {
-  try {
-    // Em um ambiente real, faria uma requisição para a API
-    // const response = await axios.get("/api/avaliacoes/stats");
-    // return response.data;
-    
-    // Simulação de dados de estatísticas
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    return [
-      { pergunta: "velocidadeCarregamento", media: 4.2, totalAvaliacoes: 45 },
-      { pergunta: "facilidadeNavegacao", media: 3.8, totalAvaliacoes: 45 },
-      { pergunta: "clarezaInformacoes", media: 4.5, totalAvaliacoes: 45 },
-      { pergunta: "qualidadeConteudo", media: 4.7, totalAvaliacoes: 45 },
-      { pergunta: "atualizacaoDados", media: 3.9, totalAvaliacoes: 45 },
-      { pergunta: "designVisual", media: 4.3, totalAvaliacoes: 45 },
-      { pergunta: "experienciaMobile", media: 3.6, totalAvaliacoes: 45 },
-      { pergunta: "satisfacaoGeral", media: 4.1, totalAvaliacoes: 45 },
-      { pergunta: "probabilidadeRecomendar", media: 4.4, totalAvaliacoes: 45 },
-      { pergunta: "funcionalidadesUteis", media: 3.7, totalAvaliacoes: 45 },
-    ];
-  } catch (error) {
-    console.error("Erro ao obter estatísticas:", error);
-    throw error;
+export async function getAvaliacoesStats(tipoUsuario?: 'atleta' | 'clube' | 'arbitro' | 'todos') {
+  const response = await fetch('/api/avaliacoes/stats' + (tipoUsuario && tipoUsuario !== 'todos' ? `?tipoUsuario=${tipoUsuario}` : ''));
+  if (!response.ok) {
+    throw new Error('Erro ao buscar estatísticas');
   }
-};
+  return response.json();
+}

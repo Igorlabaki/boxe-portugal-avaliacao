@@ -22,6 +22,7 @@ export type AvaliacaoStats = {
   pergunta: string;
   media: number;
   totalAvaliacoes: number;
+  tipoUsuario?: 'atleta' | 'clube' | 'arbitro';
 };
 
 // Mapeamento de IDs para nomes de perguntas
